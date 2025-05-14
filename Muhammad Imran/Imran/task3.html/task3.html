@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ Advanced To-Do List</title>
+    <link rel="stylesheet" href="task3.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <svg class="logo" viewBox="0 0 24 24" width="40" height="40">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" fill="none" stroke="#3498db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h1>TaskMaster Pro</h1>
+        </div>
+        
+        <div class="input-group">
+            <div class="search-wrapper">
+                <svg class="search-icon" viewBox="0 0 24 24" width="20" height="20">
+                    <circle cx="11" cy="11" r="8" stroke="#666" stroke-width="2" fill="none"/>
+                    <line x1="16.5" y1="16.5" x2="22" y2="22" stroke="#666" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <input type="text" id="taskInput" placeholder="What needs to be done today?" 
+                       onkeydown="handleKeyPress(event)">
+            </div>
+            <button onclick="addTask()" class="add-btn">
+                <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path d="M12 5v14M5 12h14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                Add Task
+            </button>
+        </div>
+        
+        <div class="task-filters">
+            <button class="filter-btn active" onclick="filterTasks('all')">All</button>
+            <button class="filter-btn" onclick="filterTasks('active')">Active</button>
+            <button class="filter-btn" onclick="filterTasks('completed')">Completed</button>
+        </div>
+        
+        <ul id="taskList"></ul>
+        
+        <div class="task-stats">
+            <span id="taskCount">0</span> tasks remaining
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 0%"></div>
+            </div>
+        </div>
+    </div>
+    <script src="task3.js"></script>
+</body>
+</html>
